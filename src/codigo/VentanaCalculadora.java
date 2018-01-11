@@ -14,7 +14,7 @@ import java.awt.Color;
 public class VentanaCalculadora extends javax.swing.JFrame {
     
     String numero1;
-    String operacion;
+    String operacion = "vacio";
     /**
      * Creates new form VentanaCalculadora
      */
@@ -445,6 +445,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
 	else if(operacion.equalsIgnoreCase("/")){
 	    operando1 /= operando2;
 	}
+	//TODO Hacer el igual
 	jLabel1.setText(String.valueOf(operando1));
 	jLabel2.setText(numero1 + operacion + numero2);
     }//GEN-LAST:event_botonIgualMousePressed
@@ -475,7 +476,10 @@ public class VentanaCalculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCEMousePressed
 
     private void botonCEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCEActionPerformed
-        // TODO add your handling code here:
+        jLabel1.setText("0");
+	jLabel2.setText("");
+	operacion = "vacio";
+	numero1 = "";
     }//GEN-LAST:event_botonCEActionPerformed
 
     private void botonComaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonComaMousePressed
